@@ -1,0 +1,8 @@
+@use "sass:math";
+
+$defaultFontSize: 16;
+
+
+@function toRem($px) {
+  @return math.div($px, $defaultFontSize)+rem;
+}

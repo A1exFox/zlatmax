@@ -1,2 +1,9 @@
+@import 'modules/general';
+@import 'fonts';
 @import 'header';
 @import 'footer';
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: toRem(16);
+}
