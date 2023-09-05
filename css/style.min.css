@@ -1,0 +1,35 @@
+.no-webp header {
+  background-image: url("../img/header/ksnip_20230816-144902.png"); }				header {
+  background-color: gray;
+}				.avif header {					background-image: url("../img/header/ksnip_20230816-144902.avif")				}			
+
+header p {
+  text-decoration: overline;
+  text-align: center;
+}
+
+.no-webp footer {
+  background-image: url("../img/footer/ksnip_20230816-145026.png"); }
+
+footer {
+  background-color: gray;
+}				.avif footer {					background-image: url("../img/footer/ksnip_20230816-145026.avif")				}			
+
+footer p {
+  text-decoration: underline;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  header p {
+    text-align: left;
+  }
+
+  footer p {
+    text-align: right;
+  }
+}
+
+.webp header { background-image: url(../img/header/ksnip_20230816-144902.webp); }
+
+.webp footer { background-image: url(../img/footer/ksnip_20230816-145026.webp); }
