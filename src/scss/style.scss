@@ -1,9 +1,28 @@
 @import 'modules/general';
+@import 'modules/normalize';
+@import 'modules/reset';
 @import 'fonts';
-@import 'header';
-@import 'footer';
+@import 'modules/iconsFont';
+@import 'modules/importCssGen';
 
 body {
   font-family: "Montserrat", sans-serif;
   font-size: toRem(16);
+  line-height: 140%;
+  color: $mainBlack;
+  background-color: #ffffff;
 }
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+._container {
+  max-width: 1610px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+@import 'header';
+
+@import 'footer';

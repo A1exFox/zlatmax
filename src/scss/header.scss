@@ -1,12 +1,38 @@
-header {
-  // background-color: burlywood;
-  background-color: gray;
-  background-image: url('../img/header/ksnip_20230816-144902.png');
-  p {
-    text-decoration: overline;
-    text-align: center;
-    @media (max-width: 768px) {
-      text-align: left;
+.header {
+  &__top {}
+}
+// =======[header-top]=======
+.header-top {
+  color: $mainWhite;
+  background-color: $secondBlack;
+  &__container {
+    display: flex;
+    min-height: 70px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__menu {}
+  &__account {
+    flex: 0 0 auto;
+  }
+}
+.ht-menu {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  padding: 5px 0;
+  &__item {
+    padding: 5px 15px;
+  }
+  &__link {
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
+.ht-account {
+  padding-left: 10px;
+  &__icon {}
+  &__text {}
+}
+.icon-user {}
