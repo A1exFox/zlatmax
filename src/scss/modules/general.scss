@@ -1,6 +1,7 @@
 @use "sass:math";
 
 $defaultFontSize: 16;
+$widthContainer: 1610;
 $widthLaptopL: 1440;
 $widthLaptop: 1024;
 $widthTablet: 768;
@@ -10,6 +11,9 @@ $widthMobileS: 320;
 
 @function toRem($px) {
   @return math.div($px, $defaultFontSize)+rem;
+}
+@function toPx($px) {
+  @return $px+px;
 }
 
 @mixin responsive($property: "", $size1: 0, $size2: 0, $width1: 0, $width2: 0, $mode: "<>") {
@@ -35,6 +39,8 @@ $widthMobileS: 320;
 
     $clampValue: #{"clamp("toRem($minSize)","$prefferedValue"," toRem($maxSize)")"};
     $calcValue: #{"calc("$prefferedValue")"};
+    // if [@supports] is not supports in browser;
+    #{$property}: toRem($minSize);
 
     // if [clamp()] is support
     @supports (#{$property}:$clampValue) {
