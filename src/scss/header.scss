@@ -112,6 +112,8 @@
 }
 
 .hm-right {
+  display: flex;
+  align-items: center;
   &__location {}
   &__phones {}
   &__favorite {}
@@ -138,5 +140,36 @@
 }
 
 
-.hmr-phones {}
+.hmr-phones {
+  &__top:not(:last-child) {
+    padding-bottom: 3px;
+  }
+  &__request-link {
+    font-size: toRem(18);
+    font-weight: 700;
+    color: $orangeMain;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.hmrp-top {
+  display: flex;
+  align-items: center;
+  &_link {
+    font-size: toRem(18);
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__button {
+    margin-left: 7px;
+    padding: 0 toRem(10);
+    background-color: transparent;
+    cursor: pointer;
+  }
+  &__icon {}
+}
+
 .hmr-cart {}

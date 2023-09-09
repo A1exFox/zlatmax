@@ -1,0 +1,26 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: toRem(16);
+  line-height: 140%;
+  font-weight: 500;
+  color: $mainBlack;
+  background-color: #ffffff;
+}
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+._container {
+  max-width: toPx($widthContainer);
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.icon-arrow {
+  &__bottom::before {
+    display: block;
+    transform: rotate(90deg);
+  }
+}
