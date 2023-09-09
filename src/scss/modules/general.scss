@@ -34,38 +34,40 @@ $widthMobileS: 320;
     // The best formula of responsive property:
     // https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
     $slope: math.div($diffSize, $diffWidth);
-    $intersect: (-$minWidth)*$slope+$minSize;
+    $intersect: (
+      -$minWidth)*$slope+$minSize;
     $prefferedValue: #{toRem($intersect)}" + "#{$slope * 100}vw;
 
     $clampValue: #{"clamp("toRem($minSize)","$prefferedValue"," toRem($maxSize)")"};
     $calcValue: #{"calc("$prefferedValue")"};
     // if [@supports] is not supports in browser;
-    #{$property}: toRem($minSize);
+    #{$property}: toRem($minSize
+    );
 
-    // if [clamp()] is support
-    @supports (#{$property}:$clampValue) {
-      #{$property}: $clampValue;
+  // if [clamp()] is support
+  @supports (#{$property}:$clampValue) {
+    #{$property}: $clampValue;
+  }
+  // if [clamp()] is not support
+  @supports not (#{$property}:$clampValue) {
+    // if [calc()] is support
+    @supports (#{$property}: $calcValue) {
+      #{$property}: $calcValue;
+      @if ($mode ==">" or $mode =="<>") {
+        @media (min-width: #{$maxWidth}px) {
+          #{$property}: toRem($maxSize);
+        }
+      }
+      @if ($mode =="<" or $mode =="<>") {
+        @media (max-width: #{$minWidth}px) {
+          #{$property}: toRem($minSize);
+        }
+      }
     }
-    // if [clamp()] is not support
-    @supports not (#{$property}:$clampValue) {
-      // if [calc()] is support
-      @supports (#{$property}: $calcValue) {
-        #{$property}: $calcValue;
-        @if ($mode ==">" or $mode =="<>") {
-          @media (min-width: #{$maxWidth}px) {
-            #{$property}: toRem($maxSize);
-          }
-        }
-        @if ($mode =="<" or $mode =="<>") {
-          @media (max-width: #{$minWidth}px) {
-            #{$property}: toRem($minSize);
-          }
-        }
-      }
-      // if [calc()] is not support
-      @supports not (#{$property}: $calcValue) {
-        #{$property}: toRem($minSize);
-      }
+    // if [calc()] is not support
+    @supports not (#{$property}: $calcValue) {
+      #{$property}: toRem($minSize);
     }
   }
+}
 }
