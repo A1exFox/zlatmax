@@ -1,175 +1,51 @@
 .header {
   &__top {}
-  &__middle {}
 }
-// =======[header-top]=======
-.header-top {
-  color: $mainWhite;
-  background-color: $secondBlack;
+// ======[top-header]======
+.top-header {
+  background-color: $blackTopHeader;
+
   &__container {
     display: flex;
+    align-items: center;
     min-height: toRem(70);
-    align-items: center;
-    justify-content: space-between;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: $white;
   }
-  &__menu {}
-  &__account {
-    flex: 0 0 auto;
-  }
-}
-.ht-menu {
-  display: flex;
-  flex-wrap: wrap;
-  @include responsive("column-gap", 30, 10, $widthContainer, $widthMobileS);
-  padding: toRem(5);
-  padding-left: 0;
-  &__item {}
-  &__link {
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-.ht-account {
-  display: flex;
-  align-items: center;
-  &__icon {
-    &::before {
-      font-size: toRem(27);
-    }
-  }
-  &__text {
-    padding-left: toRem(10);
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-// =======[header-middle]=======
-.header-middle {
-  background-color: $secondWhite;
-  &__container {
-    min-height: toRem(90);
-    display: flex;
-    align-items: center;
-  }
-  &__left {
+
+  &__menu {
     flex: 1 1 auto;
   }
-  &__right {}
+  &__account {}
 }
-.hm-left {
+.menu-header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  &__logo {
-    color: $thirdBlack;
-    &::before {
-      font-size: toRem(42.45);
-    }
-    &:hover {
-      color: $mainBlack;
-    }
-  }
-  &__search {
-    flex: 0 1 toRem(377);
-  }
-}
-.hml-search {
-  position: relative;
-  margin: toRem(10);
-  @include responsive("margin-left", 158, 20, $widthContainer, $widthLaptop);
-  &__text {
-    font-size: toRem(14);
-    background-color: $searchBg;
-    padding: toRem(12);
-    padding-left: toRem(42);
-    border: 1px solid $borderSearch;
-    border-radius: toRem(3);
-    width: 100%;
-  }
-  &__button {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-    height: 100%;
-    width: toRem(44);
-    &::before {
-      font-size: toRem(20);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $buttonSearch;
-    }
-    &:focus,
-    &:hover {
-      &::before {
-        color: $mainBlack;
-      }
-      cursor: pointer;
-    }
-  }
-}
-
-.hm-right {
-  display: flex;
-  align-items: center;
-  &__location {}
-  &__phones {}
-  &__favorite {}
-  &__cart {}
-}
-.hmr-location {
-  margin: toRem(5);
-  margin-right: toRem(55);
+  column-gap: 60px;
+  @include responsive("column-gap", 60, 15, $widthContainer, $widthTablet);
+  &__item {}
   &__link {
-    display: flex;
-    align-items: center;
-  }
-  &__icon {
-    &::before {
-      display: block;
-      font-size: toRem(24);
-    }
-  }
-  &__name-location {
-    margin-left: toRem(10);
-    font-size: toRem(18);
-    font-weight: 600;
-  }
-}
-
-
-.hmr-phones {
-  &__top:not(:last-child) {
-    padding-bottom: 3px;
-  }
-  &__request-link {
-    font-size: toRem(18);
-    font-weight: 700;
-    color: $orangeMain;
+    font-size: toRem(16);
+    font-weight: 500;
     &:hover {
       text-decoration: underline;
     }
   }
 }
-.hmrp-top {
+.header-account {
   display: flex;
   align-items: center;
-  &_link {
+  &__icon {
+    font-size: toRem(27.6);
+    margin: 15px;
+  }
+  &__text {
     font-size: toRem(18);
     font-weight: 600;
     &:hover {
       text-decoration: underline;
     }
   }
-  &__button {
-    margin-left: 7px;
-    padding: 0 toRem(10);
-    background-color: transparent;
-    cursor: pointer;
-  }
-  &__icon {}
 }
-
-.hmr-cart {}

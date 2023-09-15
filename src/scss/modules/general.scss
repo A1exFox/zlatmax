@@ -3,7 +3,7 @@
 $defaultFontSize: 16;
 $widthContainer: 1610;
 $widthLaptopL: 1440;
-$widthLaptop: 1024;
+$widthLaptopS: 1024;
 $widthTablet: 768;
 $widthMobileL: 425;
 $widthMobileS: 320;
@@ -31,7 +31,7 @@ $widthMobileS: 320;
     $minWidth: math.min($width1, $width2);
     $maxWidth: math.max($width1, $width2);
 
-    // The best formula of responsive property:
+    // The best solution of responsive property:
     // https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
     $slope: math.div($diffSize, $diffWidth);
     $intersect: (
