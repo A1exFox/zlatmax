@@ -54,7 +54,66 @@
 }
 // =====[header-middle]=====
 .header-middle {
-  &__container {}
+  background-color: $whiteBgHeader1;
+  &__container {
+    display: flex;
+    align-items: center;
+    min-height: toRem(90);
+  }
+  &__logo {
+    flex: 0 0 toRem(200);
+    padding: toRem(5);
+    &::before {
+      font-size: toRem(42.45);
+      color: $blackLogo;
+      transition: .25s;
+    }
+    &:hover::before {
+      color: $black;
+    }
+  }
+  &__search {
+    flex: 0 1 toRem(347);
+    // margin-left: 158px;
+    padding: toRem(5);
+    @include responsive("margin-left", 153, 0, $widthContainer, $widthLaptopS);
+  }
+  &__action {}
+}
+.header-search {
+  position: relative;
+
+  &__input {
+    width: 100%;
+    background-color: $whiteSearch;
+    border: 1px solid $borderSearch;
+    border-radius: toRem(3);
+    padding: toRem(12);
+    padding-left: toRem(42);
+    font-size: toRem(14);
+  }
+  &__button {
+    position: absolute;
+    top: toRem(6);
+    left: toRem(6);
+    height: toRem(40);
+    width: toRem(40);
+    background-color: transparent;
+    cursor: pointer;
+    &::before {
+      color: $blackTransparent;
+      // font-size: toRem(16);
+    }
+    &:hover::before {
+      color: $black;
+    }
+  }
+}
+.header-action {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 // =====[header-catalog]=====
 .header-catalog {
