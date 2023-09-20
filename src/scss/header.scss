@@ -1,193 +1,62 @@
 .header {
-  &__top {}
+  &__menu {}
   &__middle {}
+  &__catalog {}
 }
-// ======[top-header]======
-.top-header {
-  background-color: $blackBgHeader1;
-
+// =====[header-menu]=====
+.header-menu {
   &__container {
     display: flex;
     align-items: center;
     min-height: toRem(70);
-    padding-top: 5px;
-    padding-bottom: 5px;
-    color: $white;
+    padding: toRem(5) toRem(5);
+    padding-top: toRem(5);
+    padding-bottom: toRem(5);
   }
-
-  &__menu {
-    flex: 1 1 auto;
-  }
-  &__account {}
 }
-.menu-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  column-gap: 60px;
-  @include responsive("column-gap", 60, 15, $widthContainer, $widthTablet);
-  &__item {}
+.header-menu {
+  background-color: $blackBgHeader1;
+  color: $white;
+  &__list {
+    flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    @include responsive("column-gap", 50, 0, $widthContainer, $widthLaptopS);
+  }
+  &__item {
+    padding: toRem(5);
+  }
   &__link {
-    font-size: toRem(16);
-    font-weight: 500;
     &:hover {
       text-decoration: underline;
     }
   }
-}
-.header-account {
-  display: flex;
-  align-items: center;
-  &__icon {
+  &__account:hover &__text {
+    text-decoration: underline;
+  }
+  &__account {
+    display: flex;
+    align-items: center;
+  }
+  &__icon::before {
     font-size: toRem(27.6);
-    margin: 15px;
+    padding: toRem(5);
   }
   &__text {
     font-size: toRem(18);
     font-weight: 600;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-// ======[middle-header]======
-.middle-header {
-  background-color: $whiteBgHeader1;
-  &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: toRem(90);
-  }
-  &__left {
-    flex: 1 1 auto;
-  }
-  &__location {}
-  &__phone {
-    margin: toRem(5);
-    margin-left: 48px;
-    @include responsive("margin-left", 48, 10, $widthContainer, $widthLaptopS);
-  }
-  &__favorite {
-    margin-left: toRem(27);
-    &::before {
-      font-size: toRem(26.5);
-      color: $black;
-      transition: 0.2s;
-    }
-    &:hover::before {
-      color: $favorite;
-    }
-  }
-  &__order {}
-}
-.mid-head-left {
-  display: flex;
-  align-items: center;
-  &__logo {
-    flex: 0 0 toRem(200);
     padding: toRem(5);
-    &::before {
-      font-size: toRem(42.45);
-      color: $blackLogo;
-      transition: 0.2s;
-    }
-    &:hover::before {
-      color: $black;
-    }
-  }
-  &__form {
-    max-width: toRem(377);
-    @include responsive("margin-left", 148, 5, $widthContainer, $widthLaptopS);
-    position: relative;
-    padding: toRem(5);
-    width: 100%;
-  }
-  &__input {
-    display: block;
-    width: 100%;
-    background-color: $whiteSearch;
-    border: 1px solid $borderSearch;
-    border-radius: toRem(3);
-    font-size: toRem(14);
-    padding: toRem(12);
-    padding-left: toRem(42);
-  }
-  &__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    left: toRem(6);
-    top: toRem(6);
-    background-color: transparent;
-    height: toRem(40);
-    width: toRem(40);
-    cursor: pointer;
-    &::before {
-      color: $borderSearch;
-    }
-    &:hover::before {
-      color: $black;
+    &:not(:first-child) {
+      margin-left: toRem(5);
     }
   }
 }
-.header-location {
-  display: flex;
-  align-items: center;
-  &:hover &__city {
-    text-decoration: underline;
-  }
-  &__icon {
-    margin: toRem(5);
-    &::before {
-      display: block;
-      color: $black;
-      font-size: toRem(24.45);
-    }
-  }
-  &__city {
-    margin: toRem(5);
-    font-size: toRem(18);
-    font-weight: 600;
-    color: $black;
-  }
+// =====[header-middle]=====
+.header-middle {
+  &__container {}
 }
-.header-phone {
-  &__top {
-    display: flex;
-    align-items: center;
-  }
-  &__link {
-    font-size: toRem(18);
-    font-weight: 600;
-    color: $black;
-    margin: toRem(2);
-    margin-right: toRem(14);
-    white-space: nowrap;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  &__arrow {
-    cursor: pointer;
-    &::before {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: toRem(22);
-      height: toRem(22);
-      font-size: toRem(16);
-      color: $yellow;
-    }
-  }
-  &__request-call {
-    font-size: toRem(18);
-    font-weight: 700;
-    color: $yellow;
-    padding: toRem(2);
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+// =====[header-catalog]=====
+.header-catalog {
+  &__container {}
 }
