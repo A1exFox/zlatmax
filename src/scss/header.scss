@@ -99,7 +99,6 @@
     height: toRem(40);
     width: toRem(40);
     background-color: transparent;
-    cursor: pointer;
     &::before {
       color: $blackTransparent;
       // font-size: toRem(16);
@@ -114,7 +113,78 @@
   display: flex;
   align-items: center;
   justify-content: end;
+  color: $black;
+  &__locate {}
+  &__phone:not(:first-child) {
+    @include responsive("margin-left", 45, 0, $widthContainer, $widthLaptopL);
+  }
+  &__favorite {
+    padding: toRem(5);
+    transition: 0.25s;
+    &::before {
+      font-size: toRem(26.6);
+    }
+    &:not(:last-child) {
+      @include responsive("margin-left", 18, 0, $widthContainer, $widthLaptopL);
+    }
+    &:hover {
+      color: $favorite;
+    }
+  }
+  &__order {}
 }
+.header-locate {
+  display: flex;
+  align-items: center;
+  &:hover &__text {
+    text-decoration: underline;
+  }
+  &__icon::before {
+    font-size: toRem(24.41);
+    padding: toRem(5);
+  }
+  &__text {
+    padding: toRem(5);
+    font-size: toRem(18);
+    font-weight: 600;
+  }
+}
+.header-phone {
+  padding: toRem(5);
+  &__top {
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: toRem(3);
+    }
+  }
+  &__tel {
+    font-size: toRem(18);
+    font-weight: 600;
+    white-space: nowrap;
+    &:not(:last-child) {
+      margin-right: toRem(10);
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__arrow {
+    width: toRem(22);
+    height: toRem(22);
+    color: $yellow;
+  }
+  &__request {
+    font-size: toRem(18);
+    font-weight: 700;
+    color: $yellow;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.header-order {}
+
 // =====[header-catalog]=====
 .header-catalog {
   &__container {}

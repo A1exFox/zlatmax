@@ -19,7 +19,7 @@ body {
 }
 
 .icon-arrow {
-  &__down::before {
+  &_down::before {
     transform: rotate(90deg);
   }
 }
