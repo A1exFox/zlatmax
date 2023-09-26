@@ -234,5 +234,110 @@
 }
 // =====[header-catalog]=====
 .header-catalog {
+  background-color: $blackBgHeader1;
+  // box-shadow: 0px 4px 20px 0px #3535352e;
+  position: relative;
   &__container {}
+  &__list {
+    min-height: toRem(70);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 105px;
+    @include responsive("column-gap", 105, 0, $widthContainer, $widthLaptopS);
+  }
+  &__item {
+    padding: 5px;
+  }
+  &__category {
+    position: relative;
+    background-color: transparent;
+    color: $white;
+    cursor: pointer;
+    font-size: toRem(18);
+    transition: .3s;
+    &:hover {
+      color: $yellow;
+    }
+    &:focus::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: toRem(-24);
+      display: block;
+      width: 100%;
+      height: toRem(2);
+      background-color: $yellow;
+    }
+  }
+  &__tabs {}
+}
+.header-tabs {
+  // position: absolute;
+  // width: 100%;
+  // left: 0;
+  // top: 100%;
+  background-color: $blackBgHeader1;
+  box-shadow: 0px toRem(4) toRem(20) 0px #3535352e;
+  color: $white;
+  &__container {}
+  &__catalog {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__blade {}
+  &__souvenire {}
+  &__flashlight {}
+  &__other-product {}
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    &:not(:last-child) .header-tabs__title {
+      margin-right: toRem(85);
+    }
+    &:first-child .header-tabs__line {
+      margin-left: toRem(5);
+    }
+  }
+  &__title {
+    min-height: toRem(70);
+    display: flex;
+    align-items: center;
+    padding: toRem(5);
+    color: inherit;
+    background-color: transparent;
+    font-weight: 700;
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+  &__line {
+    background-color: #ffffff4d;
+    height: toRem(1);
+  }
+  &__list {
+    flex: 1 0 auto;
+    padding: toRem(5);
+    margin: toRem(25) 0;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+  &__link {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__see-all {
+    padding: toRem(5);
+    margin: toRem(25) 0;
+    color: $yellow;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
