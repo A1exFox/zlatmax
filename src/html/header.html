@@ -28,8 +28,15 @@
         </a>
         <div class="header-action__phone header-phone">
           <div class="header-phone__top">
-            <a href="tel:88007774967" class="header-phone__tel">8-800-777-49-67</a>
-            <button class="header-phone__arrow icon-arrow icon-arrow_down"></button>
+            <button data-spoller="group:phone;trigger:#numbers" class="header-phone__tel">8-800-777-49-67</button>
+            <!-- <a href="tel:88007774967" class="header-phone__tel">8-800-777-49-67</a> -->
+            <button data-spoller="group:phone;trigger:#numbers" class="header-phone__arrow icon-arrow icon-arrow_down"></button>
+            <ul data-spoller="group:phone;target:#numbers" class="header-phone__list">
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-61</a></li>
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-62</a></li>
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-63</a></li>
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-64</a></li>
+            </ul>
           </div>
           <button class="header-phone__request">Заказать звонок</button>
         </div>
@@ -49,16 +56,16 @@
   <div class="header__catalog header-catalog">
     <div class="header-catalog__container _container">
       <ul class="header-catalog__list">
-        <li class="header-catalog__item"><button class="header-catalog__category">Каталог ножей</button></li>
-        <li class="header-catalog__item"><button class="header-catalog__category">Клинковое оружие</button></li>
-        <li class="header-catalog__item"><button class="header-catalog__category">Сувенирные изделия</button></li>
-        <li class="header-catalog__item"><button class="header-catalog__category">Фонари ARMYTEK</button></li>
-        <li class="header-catalog__item"><button class="header-catalog__category">Сопуствующие товары</button></li>
+        <li class="header-catalog__item"><button data-spoller="group:catalog;trigger:#1Catalog" class="header-catalog__category">Каталог ножей</button></li>
+        <li class="header-catalog__item"><button data-spoller="group:catalog;trigger:#2Blade" class="header-catalog__category">Клинковое оружие</button></li>
+        <li class="header-catalog__item"><a href="#" class="header-catalog__category">Сувенирные изделия</a></li>
+        <li class="header-catalog__item"><a href="#" class="header-catalog__category">Фонари ARMYTEK</a></li>
+        <li class="header-catalog__item"><button data-spoller="group:catalog;trigger:#5OtherProduct" class="header-catalog__category">Сопуствующие товары</button></li>
       </ul>
     </div>
     <div class="header-catalog__tabs header-tabs">
       <div class="header-tabs__container _container">
-        <div class="header-tabs__catalog">
+        <div data-spoller="group:catalog;target:#1Catalog" class="header-tabs__catalog">
           <div class="header-tabs__column">
             <button class="header-tabs__title">Категория ножей</button>
             <div class="header-tabs__line"></div>
@@ -138,10 +145,76 @@
             <a href="#" class="header-tabs__see-all">Смотреть все</a>
           </div>
         </div>
-        <div class="header-tabs__blade"></div>
-        <div class="header-tabs__souvenire"></div>
-        <div class="header-tabs__flashlight"></div>
-        <div class="header-tabs__other-product"></div>
+        <div data-spoller="group:catalog;target:#2Blade" class="header-tabs__blade">
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Клинковое оружие #A</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #10</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #20</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #30</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #40</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Клинковое оружие #B</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #11</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #21</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #31</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #41</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #51</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #61</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+        </div>
+        <div data-spoller="group:catalog;target:#5OtherProduct" class="header-tabs__other-product">
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Сопуствующие #A</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #01</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #02</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #03</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #04</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Сопуствующие #B</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #11</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #12</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #13</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #14</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #15</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #16</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #17</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Сопуствующие #C</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #21</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #22</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #23</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #24</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #25</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

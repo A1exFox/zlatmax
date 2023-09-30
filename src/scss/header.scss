@@ -157,6 +157,7 @@
   &__top {
     display: flex;
     align-items: center;
+    position: relative;
     &:not(:last-child) {
       margin-bottom: toRem(3);
     }
@@ -168,6 +169,37 @@
     &:not(:last-child) {
       margin-right: toRem(10);
     }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__list {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: $z-phone-spoller;
+    background-color: $white;
+    padding: toRem(10);
+    border-radius: toRem(5);
+    box-shadow: $bxshadow;
+    margin-top: toRem(10);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    &._active {
+      visibility: visible;
+      opacity: 1;
+      margin-top: toRem(10);
+    }
+  }
+  &__item:not(:last-child) {
+    margin-bottom: toRem(5);
+  }
+  &__link {
+    font-size: toRem(18);
+    font-weight: 600;
+    white-space: nowrap;
     &:hover {
       text-decoration: underline;
     }
@@ -235,15 +267,13 @@
 // =====[header-catalog]=====
 .header-catalog {
   background-color: $blackBgHeader1;
-  // box-shadow: 0px 4px 20px 0px #3535352e;
   position: relative;
   &__container {}
   &__list {
     min-height: toRem(70);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    column-gap: 105px;
+    row-gap: toRem(20);
     @include responsive("column-gap", 105, 0, $widthContainer, $widthLaptopS);
   }
   &__item {
@@ -253,38 +283,46 @@
     position: relative;
     background-color: transparent;
     color: $white;
+    text-align: left;
     cursor: pointer;
     font-size: toRem(18);
     transition: .3s;
     &:hover {
       color: $yellow;
     }
-    &:focus::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: toRem(-24);
-      display: block;
-      width: 100%;
-      height: toRem(2);
-      background-color: $yellow;
+    &._active {
+      color: $yellow;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: toRem(-24);
+        display: block;
+        width: 100%;
+        height: toRem(2);
+        background-color: $yellow;
+      }
     }
   }
   &__tabs {}
 }
 .header-tabs {
-  // position: absolute;
-  // width: 100%;
-  // left: 0;
-  // top: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 100%;
   background-color: $blackBgHeader1;
-  box-shadow: 0px toRem(4) toRem(20) 0px #3535352e;
+  box-shadow: $bxshadow;
   color: $white;
-  &__container {}
-  &__catalog {
-    display: flex;
-    flex-wrap: wrap;
+  &__container {
+    &>* {
+      display: none;
+      &._active {
+        display: flex;
+      }
+    }
   }
+  &__catalog {}
   &__blade {}
   &__souvenire {}
   &__flashlight {}
@@ -295,6 +333,7 @@
     flex-direction: column;
     &:not(:last-child) .header-tabs__title {
       margin-right: toRem(85);
+      @include responsive("margin-right", 85, 0, $widthContainer, $widthLaptopS);
     }
     &:first-child .header-tabs__line {
       margin-left: toRem(5);
