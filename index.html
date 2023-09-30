@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./js/setSupportImg.js?_v=1695321202278"></script>
-  <link rel="stylesheet" href="./css/style.min.css?_v=1695321202278">
+  <script src="./js/setSupportImg.js?_v=1696101057084"></script>
+  <link rel="stylesheet" href="./css/style.min.css?_v=1696101057084">
   <title>Zlatmax</title>
 </head>
 
@@ -41,8 +41,15 @@
         </a>
         <div class="header-action__phone header-phone">
           <div class="header-phone__top">
-            <a href="tel:88007774967" class="header-phone__tel">8-800-777-49-67</a>
-            <button class="header-phone__arrow icon-arrow icon-arrow_down"></button>
+            <button data-spoller="group:phone;trigger:#numbers" class="header-phone__tel">8-800-777-49-67</button>
+            <!-- <a href="tel:88007774967" class="header-phone__tel">8-800-777-49-67</a> -->
+            <button data-spoller="group:phone;trigger:#numbers" class="header-phone__arrow icon-arrow icon-arrow_down"></button>
+            <ul data-spoller="group:phone;target:#numbers" class="header-phone__list">
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-61</a></li>
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-62</a></li>
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-63</a></li>
+              <li class="header-phone__item"><a href="#" class="header-phone__link">8-800-777-49-64</a></li>
+            </ul>
           </div>
           <button class="header-phone__request">Заказать звонок</button>
         </div>
@@ -60,14 +67,176 @@
     </div>
   </div>
   <div class="header__catalog header-catalog">
-    <div class="header-catalog__container _container">header-catalog</div>
+    <div class="header-catalog__container _container">
+      <ul class="header-catalog__list">
+        <li class="header-catalog__item"><button data-spoller="group:catalog;trigger:#1Catalog" class="header-catalog__category">Каталог ножей</button></li>
+        <li class="header-catalog__item"><button data-spoller="group:catalog;trigger:#2Blade" class="header-catalog__category">Клинковое оружие</button></li>
+        <li class="header-catalog__item"><a href="#" class="header-catalog__category">Сувенирные изделия</a></li>
+        <li class="header-catalog__item"><a href="#" class="header-catalog__category">Фонари ARMYTEK</a></li>
+        <li class="header-catalog__item"><button data-spoller="group:catalog;trigger:#5OtherProduct" class="header-catalog__category">Сопуствующие товары</button></li>
+      </ul>
+    </div>
+    <div class="header-catalog__tabs header-tabs">
+      <div class="header-tabs__container _container">
+        <div data-spoller="group:catalog;target:#1Catalog" class="header-tabs__catalog">
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Категория ножей</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Разделочные ножи</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Туристические ножи</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи охотничьи</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Булатные ножи</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из дамаска</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Тактического назначения</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Метательные ножи</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Мачете и кукри</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи кухонные</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Производство ножей</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи АИР</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи ЗИК</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи ЗЗОСС</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи РОСоружие</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи Оружейник</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Булат Сергея Баранова</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Булат Андрея Умерова</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи Златко</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи Стиль-М</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Оружейная компания</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Ножи по маркам стали</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали 40х102С2М</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали 95х18</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали 100х13м</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали 110х18м-ШД</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали ЭИ-107 ТЦ</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали 50х14МФ</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали AUS-8</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали К340</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали M390</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножи из стали ЭП-766</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Заточка и полировка ножей</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Паста ГОИ</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Алмазная паста</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Бруски и камни для заточки</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Заточные системы</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Ножевая мастерская</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Ножевые клинки</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Заготовки для ножей</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Литье для ножей</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Материалы для рукоятей</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Уход за рукоятиями ножей</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+        </div>
+        <div data-spoller="group:catalog;target:#2Blade" class="header-tabs__blade">
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Клинковое оружие #A</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #10</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #20</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #30</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #40</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Клинковое оружие #B</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #11</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #21</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #31</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #41</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #51</a></li>
+              <li class="header-tabs__item"><a href="" class="header-tabs__link">Blade #61</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+        </div>
+        <div data-spoller="group:catalog;target:#5OtherProduct" class="header-tabs__other-product">
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Сопуствующие #A</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #01</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #02</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #03</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #04</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Сопуствующие #B</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #11</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #12</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #13</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #14</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #15</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #16</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #17</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+          <div class="header-tabs__column">
+            <button class="header-tabs__title">Сопуствующие #C</button>
+            <div class="header-tabs__line"></div>
+            <ul class="header-tabs__list">
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #21</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #22</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #23</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #24</a></li>
+              <li class="header-tabs__item"><a href="#" class="header-tabs__link">Other #25</a></li>
+            </ul>
+            <div class="header-tabs__line"></div>
+            <a href="#" class="header-tabs__see-all">Смотреть все</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
     <main></main>
     
   </div>
 
-  <script src="./js/app.js?_v=1695321202278"></script>
+  <script src="./js/app.js?_v=1696101057084"></script>
 </body>
 
 </html>
