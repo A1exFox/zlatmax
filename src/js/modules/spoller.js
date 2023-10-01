@@ -1,59 +1,65 @@
-export const DATA_SPOLLER = '[data-spoller]';
-const CSS_ACTIVE = '_active';
-
-const spollers = document.querySelectorAll(DATA_SPOLLER);
+const spollerElements = document.querySelectorAll('[data-spoller]');
+export const spollers = initSpollers(spollerElements);
 
 export function clickSpoller(spoller) {
-  const data = spoller.dataset.spoller;
-  if (!data) return;
-  const keys = ['group', 'trigger', 'target'];
-  const property = getPropertyObj(data, keys);
-  if (!property.trigger || !property.group) return;
-  const group = filterArr(`group:${property.group}`, spollers);
-  const triggers = filterArr(`trigger:${property.trigger}`, group);
-  const targets = filterArr(`target:${property.trigger}`, group);
-  changeCssState(group, [...triggers, ...targets], CSS_ACTIVE);
-}
-
-function filterArr(property, elements) {
-  const filteredObj = [];
-  for (const element of elements) {
-    const isValid = element.dataset.spoller.includes(property);
-    if (!isValid) continue;
-    filteredObj.push(element);
-  }
-  return filteredObj;
-}
-
-function changeCssState(group, elements, selector) {
-  const isActive = elements[0].classList.contains(selector);
-  if (!isActive) removeAllSelector(group, selector);
-  for (const element of elements) {
-    if (isActive) removeSelector(element, selector);
-    else addSelector(element, selector);
+  const links = spollers.link[spoller.link];
+  if (!links || !links.length) return;
+  const isActive = links[0].classList.contains('_active');
+  if (isActive) {
+    removeSelector(links, '_active');
+  } else {
+    const groups = spollers.group[spoller.group];
+    removeSelector(groups, '_active');
+    addSelector(links, '_active');
   }
 }
-
-function removeAllSelector(elements, selector) {
-  for (const element of elements) {
-    removeSelector(element, selector);
+function removeSelector(array, selector) {
+  for (const element of array) {
+    element.classList.remove(selector);
   }
 }
-
-function removeSelector(element, selector) {
-  element.classList.remove(selector);
+function addSelector(array, selector) {
+  for (const element of array) {
+    element.classList.add(selector);
+  }
 }
-function addSelector(element, selector) {
-  element.classList.add(selector);
+function initSpollers(spollers) {
+  if (!spollers) return null;
+  const map = new Map();
+  for (const spoller of spollers) {
+    const data = spoller.dataset.spoller;
+    if (!data) continue;
+    if (!data.includes('trigger:') || !data.includes('group:')) continue;
+    const [group, link] = data.split(';');
+    if (!group || !link) continue;
+    const groupName = group.split(':')[1];
+    const linkValue = link.split(':')[1];
+    if (!groupName || !linkValue) continue;
+    const structure = {
+      group: groupName,
+      link: linkValue,
+    };
+    map.set(spoller, structure);
+  }
+  const group = {};
+  const link = {};
+  for (const object of map.values()) {
+    if (!group[object.group]) {
+      group[object.group] = filterByData(spollers, 'spoller', `group:${object.group}`);
+    }
+    if (!link[object.link]) {
+      link[object.link] = filterByData(spollers, 'spoller', `trigger:${object.link}`);
+      link[object.link].push(...filterByData(spollers, 'spoller', `target:${object.link}`));
+    }
+  }
+  return { map, group, link };
 }
-
-function getPropertyObj(string, keys) {
-  const result = {};
-  const properties = string.split(';');
-  for (const property of properties) {
-    const [key, value] = property.split(':');
-    if (!key || !value || !keys.includes(key)) continue;
-    result[key] = value;
+function filterByData(collection, dataName, request) {
+  const result = [];
+  for (const element of collection) {
+    const data = element.dataset[dataName];
+    if (!data || !data.includes(request)) continue;
+    result.push(element);
   }
   return result;
 }
