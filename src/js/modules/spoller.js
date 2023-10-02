@@ -1,3 +1,5 @@
+import { action } from "./common";
+
 const spollerElements = document.querySelectorAll('[data-spoller]');
 export const spollers = initSpollers(spollerElements);
 
@@ -6,21 +8,11 @@ export function clickSpoller(spoller) {
   if (!links || !links.length) return;
   const isActive = links[0].classList.contains('_active');
   if (isActive) {
-    removeSelector(links, '_active');
+    action.selector.remove(links, '_active');
   } else {
     const groups = spollers.group[spoller.group];
-    removeSelector(groups, '_active');
-    addSelector(links, '_active');
-  }
-}
-function removeSelector(array, selector) {
-  for (const element of array) {
-    element.classList.remove(selector);
-  }
-}
-function addSelector(array, selector) {
-  for (const element of array) {
-    element.classList.add(selector);
+    action.selector.remove(groups, '_active');
+    action.selector.add(links, '_active');
   }
 }
 function initSpollers(spollers) {
@@ -45,21 +37,12 @@ function initSpollers(spollers) {
   const link = {};
   for (const object of map.values()) {
     if (!group[object.group]) {
-      group[object.group] = filterByData(spollers, 'spoller', `group:${object.group}`);
+      group[object.group] = action.filterBy.dataset(spollers, 'spoller', `group:${object.group}`);
     }
     if (!link[object.link]) {
-      link[object.link] = filterByData(spollers, 'spoller', `trigger:${object.link}`);
-      link[object.link].push(...filterByData(spollers, 'spoller', `target:${object.link}`));
+      link[object.link] = action.filterBy.dataset(spollers, 'spoller', `trigger:${object.link}`);
+      link[object.link].push(...action.filterBy.dataset(spollers, 'spoller', `target:${object.link}`));
     }
   }
   return { map, group, link };
-}
-function filterByData(collection, dataName, request) {
-  const result = [];
-  for (const element of collection) {
-    const data = element.dataset[dataName];
-    if (!data || !data.includes(request)) continue;
-    result.push(element);
-  }
-  return result;
 }
