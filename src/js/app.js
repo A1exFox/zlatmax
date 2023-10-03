@@ -1,10 +1,10 @@
-import { clickSpoller, spollers } from "./modules/spoller";
+import { initSpollers } from "./modules/spoller";
+import { config } from "./modules/common";
+
+const spollers = initSpollers(config.spoller);
 
 document.addEventListener('click', clickDocument);
 
 function clickDocument(event) {
-  if (spollers) {
-    const spoller = spollers.map.get(event.target.closest('[data-spoller]'));
-    if (spoller) return clickSpoller(spoller);
-  }
+  if (spollers) spollers.clickSpoller(event.target);
 }

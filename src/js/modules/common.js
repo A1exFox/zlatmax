@@ -1,7 +1,7 @@
 const config = {
   spoller: {
     cssActive: '_active',
-    datasetName: {
+    dataName: {
       html: '[data-spoller]',
       js: 'spoller',
     }
