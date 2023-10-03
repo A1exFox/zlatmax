@@ -6,5 +6,5 @@ const spollers = initSpollers(config.spoller);
 document.addEventListener('click', clickDocument);
 
 function clickDocument(event) {
-  if (spollers) spollers.clickSpoller(event.target);
+  if (spollers) return spollers.clickSpoller(event.target);
 }
